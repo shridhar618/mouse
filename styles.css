@@ -1,0 +1,248 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* Prevent width overflow */
+}
+
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  width: 100vw;       /* Ensure no overflow beyond viewport */
+}
+
+nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav li {
+  height: 7vh;
+}
+
+nav a {
+  padding: 3vh 3vw;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 2.5vh;
+  font-family: sans-serif, "Poppins";
+  font-weight: bolder;
+}
+
+nav a:hover {
+  color: rgba(255, 221, 27, 0.859);
+  font-size: 2.7vh;
+  padding-right: 1vw;
+}
+
+nav li:first-child {
+  margin-right: auto;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0; 
+  right: 0;
+  height: 80vh;
+  width: 18vw;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 999;
+}
+
+.sidebar li {
+  width: 100%;
+}
+
+.sidebar a {
+  width: 100%;
+}
+
+.menu-button {
+  display: none;
+}
+
+@media (max-width: 80vw) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+}
+
+@media (max-width: 40vw) {
+  .sidebar {
+    width: 30vw;
+  }
+}
+
+.background-container {
+  position: relative;
+  top: 0;
+  margin-top: -1vh;
+  width: 100vw;
+  height: 150vh;
+  background-image: url('Pics/OIG4.jpeg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.hero h1 {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 80vh;
+  z-index: 2;
+  font-size: 15vh;
+  letter-spacing: 0.5vw;
+  font-family: sans-serif;
+  animation: fadeIn 3s ease-in-out;
+  color: white;
+}
+
+.hero h1 {
+  transition: transform 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.skyscraper, .skyscraper2 {
+  position: absolute;
+  top: 0;
+  width: 50vw;
+  height: 120vh;
+  transition: transform 1s ease-in-out;
+  overflow-y: hidden;
+}
+
+.skyscraper {
+  left: 40vw;
+  margin-top: 28vh;
+}
+
+.skyscraper2 {
+  left: 6vw;
+  margin-top: 28vh;
+}
+
+/* For phones (max-width: 37.5vw or 600px) */
+@media screen and (max-width: 600px) {
+
+  .background-container {
+    top: 0;
+    margin-top: -1vh;
+    width: 100vw;
+    height: 90vh;
+    background-image: url('Pics/OIG4.jpeg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    perspective: -100px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  nav a {
+    font-size: 2vh; /* Adjusted for smaller screens */
+    padding: 2vh 2vw;
+  }
+
+  .hero h1 {
+    font-size: 6vh;
+    margin-top: 10vh;
+    text-align: center;
+  }
+
+  .skyscraper, .skyscraper2 {
+    width: 70vw;
+    height: 52vh;
+    top: 10vh;
+  }
+
+  .skyscraper {
+    left: 45vw;
+  }
+
+  .skyscraper2 {
+    left: -10vw;
+  }
+
+  .sidebar {
+    width: 60vw;
+  }
+}
+
+/* For tablets (min-width: 37.5vw and max-width: 56.25vw or 900px) */
+@media screen and (max-width: 425px) {
+
+  .background-container {
+   
+    width: 100vw;
+    height: 90vh;
+    background-image: url('Pics/OIG4.jpeg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    perspective: -100px;
+  }
+
+
+
+  nav ul {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  nav a {
+    font-size: 2.2vh;
+    padding: 2.5vh 2.5vw;
+  }
+
+  .hero h1 {
+    font-size: 5vh;
+    margin-top: 40vh;
+    text-align: center;
+  }
+
+  .skyscraper, .skyscraper2 {
+    width: 120vw;
+    height: 80vh;
+
+  }
+
+  .skyscraper {
+    left: 20vw;
+  }
+
+  .skyscraper2 {
+    margin-left: -100px;
+  }
+
+  .sidebar {
+    width: 50vw;
+  }
+}
